@@ -22,7 +22,7 @@ const CustomModal = ({
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState();
 
-  const userId = user.id;
+  const userId = user?.id;
 
   useEffect(() => {
     setTask(currentData.task);

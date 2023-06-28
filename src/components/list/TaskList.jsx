@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './TaskList.module.css';
 import TaskCard from '../card/TaskCard';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { LayoutGroup, motion } from 'framer-motion';
 
 const Tasklist = ({
   setCurrentData,
@@ -12,10 +12,11 @@ const Tasklist = ({
   return (
     <div>
       <div className={classes.main}>
-        <TransitionGroup>
-          {cardsList?.map((item) => (
-            <CSSTransition key={item.id} timeout={400} classNames="item">
+        <LayoutGroup layoutRoot>
+          <motion.div layout transition={{ duration: 0.5, ease: 'backOut' }}>
+            {cardsList?.map((item) => (
               <TaskCard
+                key={item.id}
                 id={item.id}
                 task={item.task}
                 description={item.description}
@@ -25,9 +26,9 @@ const Tasklist = ({
                 setCurrentData={setCurrentData}
                 setDescriptionModal={setDescriptionModal}
               />
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
+            ))}
+          </motion.div>
+        </LayoutGroup>
       </div>
     </div>
   );

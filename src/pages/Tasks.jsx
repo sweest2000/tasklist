@@ -25,15 +25,15 @@ const Tasks = () => {
         'postgres_changes',
         { event: '*', schema: 'public', table: 'tasks' },
         () => {
-          getTasks(setCardsList, user.id);
+          getTasks(setCardsList, user?.id);
         }
       )
       .subscribe();
-  }, []);
+  }, [user.id]);
 
   useEffect(() => {
-    getTasks(setCardsList, user.id);
-  }, []);
+    getTasks(setCardsList, user?.id);
+  }, [user.id]);
 
   return !user ? (
     <Navigate to="/" replace />
