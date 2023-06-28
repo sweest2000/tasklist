@@ -1,0 +1,25 @@
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 101;
+}
+
+.description-wrapper {
+  display: flex;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px 60px;
+  border-radius: 14px;
+  text-align: justify;
+  gap: 25px;
+  width: 400px;
+}

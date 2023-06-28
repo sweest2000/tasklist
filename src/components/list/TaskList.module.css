@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+}
+
+.text {
+  color: #0a1629;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin-top: 25px;
+}
