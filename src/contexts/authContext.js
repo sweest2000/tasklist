@@ -5,7 +5,14 @@ const AuthContext = createContext({});
 
 export const useAuth = () => useContext(AuthContext);
 
-const register = (email, password) => db.auth.signUp({ email, password });
+const register = (email, password) =>
+  db.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: 'sweest.netlify.app',
+    },
+  });
 const login = (email, password) =>
   db.auth.signInWithPassword({ email, password });
 const logout = () => db.auth.signOut();
