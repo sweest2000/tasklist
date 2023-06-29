@@ -29,11 +29,11 @@ const Tasks = () => {
         }
       )
       .subscribe();
-  }, [user.id]);
+  }, [user?.id]);
 
   useEffect(() => {
     getTasks(setCardsList, user?.id);
-  }, [user.id]);
+  }, [user?.id]);
 
   return !user ? (
     <Navigate to="/" replace />

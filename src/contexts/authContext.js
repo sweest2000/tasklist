@@ -12,6 +12,7 @@ const logout = () => db.auth.signOut();
 
 export const AuthProvdier = ({ children }) => {
   const [user, setUser] = useState(null);
+  // eslint-disable-next-line
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);
 
